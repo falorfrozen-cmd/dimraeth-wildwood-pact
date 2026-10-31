@@ -31,18 +31,12 @@ from reaching the game while the mouse is over it.
 
 ## Install
 
-The menu needs **BepInEx**, a mod loader. There are two downloads on the [Releases](../../releases) page:
-
-| File | Use it when |
-|---|---|
-| `WildwoodPact-x.y.z-Full.zip` | **You have never installed BepInEx for Dimraeth.** Includes BepInEx 6 be.791. Recommended. |
-| `WildwoodPact-x.y.z.zip` | You already have BepInEx 6 IL2CPP be.791 (for example for other mods). Plugin only. |
-
-### Full pack (recommended)
+Download **`WildwoodPact-x.y.z-Full.zip`** from the [Releases](../../releases) page.
+It contains the mod and **BepInEx 6 be.791**, the mod loader it needs.
 
 1. Open the game folder, the one with `Dimraeth.exe`
    (Steam: right-click Dimraeth → Manage → Browse local files).
-2. Extract **everything** from `WildwoodPact-x.y.z-Full.zip` directly into that folder.
+2. Extract **everything** from the zip directly into that folder.
    `winhttp.dll`, `doorstop_config.ini`, `BepInEx\` and `dotnet\` must end up right next to `Dimraeth.exe`.
 3. Start the game. A black console window opens with it — that is BepInEx.
    The first start takes a little longer; wait for the main menu, then press **Insert**.
@@ -50,10 +44,8 @@ The menu needs **BepInEx**, a mod loader. There are two downloads on the [Releas
 > **Common mistake:** Windows "Extract All" creates an extra folder (`Dimraeth\WildwoodPact-1.0.0-Full\…`).
 > Then nothing loads. Move the folder's contents up into the game folder.
 
-### Plugin only
-
-Put `DimraethModMenu.dll` into `Dimraeth\BepInEx\plugins\`. BepInEx must already be installed and the
-game must have been started once with it.
+**Already using BepInEx 6 IL2CPP be.791 for other mods?** Only copy `BepInEx\plugins\DimraethModMenu.dll`
+from the zip into your `BepInEx\plugins` folder, so your BepInEx settings stay as they are.
 
 ### Not working?
 
