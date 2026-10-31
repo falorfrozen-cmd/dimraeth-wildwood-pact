@@ -1,0 +1,9 @@
+bin/
+obj/
+*.user
+.vs/
+*.zip
+# Game and BepInEx files must never be committed
+BepInEx/
+interop/
+*.dmp

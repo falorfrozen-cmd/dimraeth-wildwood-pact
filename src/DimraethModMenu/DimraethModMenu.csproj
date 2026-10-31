@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>DimraethModMenu</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <!-- Game folder with BepInEx installed and run once. Pass -p:GameDir=... or set DIMRAETH_DIR. -->
+    <GameDir Condition="'$(GameDir)' == '' And '$(DIMRAETH_DIR)' != ''">$(DIMRAETH_DIR)</GameDir>
+    <GameDir Condition="'$(GameDir)' == ''">$(MSBuildThisFileDirectory)..\..\</GameDir>
+    <GameRoot>$([MSBuild]::EnsureTrailingSlash('$(GameDir)'))</GameRoot>
+    <NoWarn>$(NoWarn);CS0618;CS8632</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(GameRoot)BepInEx\core\BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\core\BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\core\0Harmony.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\core\Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\core\Il2CppInterop.Common.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\Il2Cppmscorlib.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\UnityEngine.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\UnityEngine.IMGUIModule.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\UnityEngine.TextRenderingModule.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\UnityEngine.ImageConversionModule.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\Unity.Netcode.Runtime.dll" Private="false" />
+    <Reference Include="$(GameRoot)BepInEx\interop\UnityEngine.UI.dll" Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\WildwoodFrameV3.png" LogicalName="DimraethModMenu.WildwoodFrameV3.png" />
+    <EmbeddedResource Include="Assets\WildwoodDangerV3.png" LogicalName="DimraethModMenu.WildwoodDangerV3.png" />
+    <EmbeddedResource Include="Assets\WildwoodAtlasV2.png" LogicalName="DimraethModMenu.WildwoodAtlasV2.png" />
+  </ItemGroup>
+
+</Project>
