@@ -31,15 +31,39 @@ from reaching the game while the mouse is over it.
 
 ## Install
 
-1. Install **BepInEx 6 for Unity IL2CPP, Windows x64, build be.791** into the game folder (next to `Dimraeth.exe`):
-   [builds.bepinex.dev](https://builds.bepinex.dev/projects/bepinex_be) →
-   `BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.791+b782da4.zip`
-2. Start the game once, wait for the main menu, then close it.
-3. Download `WildwoodPact-x.y.z.zip` from [Releases](../../releases) and extract it into the game folder.
-   The plugin should end up at `Dimraeth\BepInEx\plugins\DimraethModMenu.dll`.
-4. Start the game, load a character and press **Insert**.
+The menu needs **BepInEx**, a mod loader. There are two downloads on the [Releases](../../releases) page:
 
-To uninstall, delete `BepInEx\plugins\DimraethModMenu.dll`.
+| File | Use it when |
+|---|---|
+| `WildwoodPact-x.y.z-Full.zip` | **You have never installed BepInEx for Dimraeth.** Includes BepInEx 6 be.791. Recommended. |
+| `WildwoodPact-x.y.z.zip` | You already have BepInEx 6 IL2CPP be.791 (for example for other mods). Plugin only. |
+
+### Full pack (recommended)
+
+1. Open the game folder, the one with `Dimraeth.exe`
+   (Steam: right-click Dimraeth → Manage → Browse local files).
+2. Extract **everything** from `WildwoodPact-x.y.z-Full.zip` directly into that folder.
+   `winhttp.dll`, `doorstop_config.ini`, `BepInEx\` and `dotnet\` must end up right next to `Dimraeth.exe`.
+3. Start the game. A black console window opens with it — that is BepInEx.
+   The first start takes a little longer; wait for the main menu, then press **Insert**.
+
+> **Common mistake:** Windows "Extract All" creates an extra folder (`Dimraeth\WildwoodPact-1.0.0-Full\…`).
+> Then nothing loads. Move the folder's contents up into the game folder.
+
+### Plugin only
+
+Put `DimraethModMenu.dll` into `Dimraeth\BepInEx\plugins\`. BepInEx must already be installed and the
+game must have been started once with it.
+
+### Not working?
+
+- **No black console window** → BepInEx is not installed: `winhttp.dll` is not next to `Dimraeth.exe`.
+- **Console opens, no menu** → check `BepInEx\plugins\DimraethModMenu.dll` exists, then look in
+  `BepInEx\LogOutput.log` for `Dimraeth Mod Menu ... loaded` and attach that file when asking for help.
+- **Laptop** → Insert may need the Fn key; F1 also opens the menu.
+
+To uninstall the mod, delete `BepInEx\plugins\DimraethModMenu.dll`. To remove BepInEx too, delete
+`winhttp.dll`, `doorstop_config.ini`, `.doorstop_version`, `changelog.txt`, `BepInEx\` and `dotnet\`.
 
 Settings are stored in `BepInEx\config\falor.dimraeth.modmenu.cfg`; menu size and position in
 `BepInEx\config\falor.dimraeth.wildwood-ui.json`.
@@ -94,6 +118,10 @@ and text fields do not exist at runtime.
 
 This is an unofficial fan mod. It is not affiliated with or endorsed by the developers of Dimraeth.
 No game files are included in this repository or in the releases. Use at your own risk.
+
+The full pack redistributes the unmodified official BepInEx 6.0.0-be.791 build (LGPL-2.1, with Il2CppInterop
+LGPL-3.0, HarmonyX MIT, Unity Doorstop LGPL-2.1 and the MIT-licensed .NET runtime). Their license texts are
+in the pack's `Licenses` folder.
 
 ## License
 
